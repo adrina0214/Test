@@ -1,0 +1,10 @@
+FROM gradle:latest
+
+WORKDIR /app
+RUN git clone https://github.com/adrina0214/TestGit.git
+
+WORKDIR /app/TestGit
+RUN gradle clean test bootJar
+
+ENTRYPOINT [ "sleep", "infinity" ]
+

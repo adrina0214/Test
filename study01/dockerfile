@@ -1,0 +1,7 @@
+FROM mariadb
+
+ENV MARIADB_ROOT_PASSWORD 1234
+
+EXPOSE 3306
+
+ENTRYPOINT [ "sleep", "infinity" ]

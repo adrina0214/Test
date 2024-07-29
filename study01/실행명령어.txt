@@ -1,0 +1,20 @@
+docker run -d -p -e --name 이미지
+
+docker run << 실행
+-d 백그라우누 실행 옵션
+-p 포트포워드 로컬 : 도커
+-e 도커쪽 환경 변수 정의
+-v 로컬 저장소와 컨테이너 저장소 공유 정의
+--name 컨테이너 이름 정의
+
+docker run -d 
+    -p 13306:3306 
+    -e MARIADB_ROOT_PASSWORD=1234 
+    -e MARIADB_DATABASE=edu 
+    -v .\mariadb\conf.d:/etc/mysql/conf.d 
+    -v .\mariadb\data:/var/lib/mysql 
+    -v .\mariadb\initdb.d:/docker-entrypoint-initdb.d 
+    --name DB 
+    mariadb:latest
+
+docker run -d -p 13306:3306 -e MARIADB_ROOT_PASSWORD=1234 -e MARIADB_DATABASE=edu -v .\mariadb\conf.d:/etc/mysql/conf.d -v .\mariadb\data:/var/lib/mysql -v .\mariadb\initdb.d:/docker-entrypoint-initdb.d --name DB mariadb:latest

@@ -1,0 +1,17 @@
+services:
+  
+  mariadb:
+    container_name: mariadb
+    image: mariadb
+    restart: always
+    ports:
+      - 3306
+
+  springboot:
+    container_name: springboot
+    build: 
+      dockerfile: dockerfile
+    restart: always
+    ports:
+      - 8080
+
